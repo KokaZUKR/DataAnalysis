@@ -1,0 +1,22 @@
+#  Пример использования програмы (скрипта)
+#  Версия 4  (весна 2015)
+
+
+# читаем данные, создаем новый столбец из индикаторов
+# В вашей ситуации путь к файлу может отличаться от указанного
+
+
+Swiss.01 <- read.table("Swiss\\Swiss_Bank_Notes_R", header=T, sep=",")
+
+#  Swiss.01
+
+origin <- 0
+Swiss.02 <- data.frame(Swiss.01, origin)
+Swiss.02$origin[1:100] <-1
+
+#  Swiss.02
+#  names(Swiss.02)
+
+Swiss.02$origin <- as.factor(Swiss.02$origin) 
+
+#  Swiss.02
